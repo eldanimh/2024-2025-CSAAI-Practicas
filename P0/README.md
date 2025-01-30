@@ -4,4 +4,4 @@
 **  Mi segundo cambio....
 *************************
 
-## 2º Commit
+![](Ejercicio2-img1.gif)
