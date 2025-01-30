@@ -4,4 +4,4 @@
 **  Mi segundo cambio....
 *************************
 
-![](Ejercicio2-img1.gif)
+![](/P0/assets/img/Ejercicio2-img1.gif)
