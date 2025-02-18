@@ -1,0 +1,21 @@
+/* Aplicando estilos por IDENTIFICADOR ÚNICO*/
+
+body {
+    background-color: lightblue;
+    color: black;
+  }
+  
+  h1 {
+    background-color: yellow;
+    color: green;
+  }
+  
+  p {
+    background-color: orange;
+  }
+  
+  /* Estilo Solo para el párrafo "especial" */
+  #especial {
+    background-color: green;
+    color: white;
+  }

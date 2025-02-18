@@ -1,0 +1,20 @@
+/* Seleccion por etiqueta */
+body {
+    background-color: lightblue;
+    color: black;
+  }
+  
+  h1 {
+    background-color: yellow;
+    color: green;
+  }
+  
+  p {
+    background-color: orange;
+  }
+
+  h2 {
+    background-color: black;
+    color:aliceblue;
+    font-family: cursive;
+  }

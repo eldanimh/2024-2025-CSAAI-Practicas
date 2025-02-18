@@ -1,0 +1,19 @@
+/* Selector de Clases en grupo Grupo */
+
+body {
+    background-color: lightblue;
+    color:black;
+  }
+  
+  .migrupo {
+    background-color: blue;
+    color: white
+  }
+  
+  .grupo2 {
+    font-family: cursive;
+  }
+
+  p {
+    background-color: orange;
+  }
