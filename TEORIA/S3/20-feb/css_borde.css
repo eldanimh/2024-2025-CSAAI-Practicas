@@ -1,0 +1,21 @@
+/* Ponemos a cero todas las propiedades del cuerpo */
+/* Sin margen, sin relleno y sin borde              */
+
+
+body {
+    padding: 5px; /* relleno - separa el body de p */ 
+    margin: 10px; /* Margen */
+    border: solid; 
+    border-color: red;
+  }
+  
+  /*  Propiedades de la caja del párrafo
+      Ponemos todo a cero, pero activamos el borde
+      para verlo. Y lo ponemos de color azul
+  */
+  p {
+    margin: 10px; /* Da margen y permite mejor visualización */ 
+    padding: 10px; /* Relleno */
+    border:solid;
+    border-color: blue;
+  }
