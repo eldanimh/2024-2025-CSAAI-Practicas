@@ -1,31 +1,36 @@
 body{
-    background-color: #f00;
+    background-color: #e2e2e2;
     margin: 0;
 }
 
 .box{
-    width: 300px;
-    height: 500px;
-    background: linear-gradient(transparent,#000a);
-    margin: 0;
-    border-radius: 7px;
-    margin: auto;
-    margin-top: 20px;
+    width: 310px;
+    background: linear-gradient(#f00,#000a);
+    margin:auto;
+    margin-top: 30px;
     border-top: 6px solid #900;
+    border-radius: 7px;
+    
+    box-shadow: 0 0 55px 0 #0007;
+    box-sizing: border-box;
+    text-align: center;
+    color: #fffc;
+    text-align: center;
+    font-family: sans-serif;
 
 }
 
 img{
-    width: 300px;
-    
+    width: 310px;
+    margin: auto;
 
 }
 
-
-h2{
-    margin: 0;
-    color: #fff;
-    text-align: center;
-    padding: 25px;
-    font-family: sans-serif;
+p{
+    list-style: none;
+    text-align: left;
+    line-height: 1.5;
+    font-size: 13px;
+    margin: auto;
+    padding: 20px;
 }
