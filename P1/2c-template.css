@@ -82,6 +82,7 @@ img {
   box-shadow: 0 0 30px #0006;
   border-radius: 8px;
   color: #fff;
+  margin-bottom: 50px;
 }
 
 .card_title{
@@ -90,7 +91,7 @@ img {
 }
 
 .card_subtitle{
-  font-size: 13px;
+  font-size: 16px;
   font-weight: 100;
   letter-spacing: 2px;
   margin: 0;
@@ -98,11 +99,12 @@ img {
 }
 
 .card_content{
-  font-size: 9px;
+  font-size: 13px;
   margin: 10px; /* arriba abajo*/
   padding-bottom: 0;
-  text-align: justify;
+  text-align: left;
   margin-bottom: 0;
+  letter-spacing: 1.3px;
 }
 
 .card_img{
