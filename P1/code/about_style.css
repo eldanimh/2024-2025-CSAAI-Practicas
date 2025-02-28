@@ -1,0 +1,152 @@
+body{
+    background-color: #e2e2e2;
+    margin: 0;
+    color: #fff;
+    font-family: sans-serif;
+}
+
+.box{
+    width: 310px;
+    background: linear-gradient(#f00,#000a);
+    margin:auto;
+    margin-top: 30px;
+    border-top: 6px solid #900;
+    border-radius: 7px;
+    box-shadow: 0 0 55px 0 #0007;
+    box-sizing: border-box;
+    text-align: center;
+    color: #fffc;
+    text-align: center;
+    font-family: sans-serif;
+
+}
+
+img{
+    width: 310px;
+    margin: auto;
+
+}
+
+p{
+    list-style: none;
+    text-align: left;
+    line-height: 1.5;
+    font-size: 13px;
+    margin: auto;
+    padding: 20px;
+}
+
+.card-blue{
+    background: #044;
+    text-align: center;
+    width: 300px;
+    margin: auto;
+    margin-top: 50px;
+    padding: 20px 10px;
+    box-shadow: 0 0 30px #0006;
+    border-radius: 8px;
+}
+
+.card_title{
+    font-size: 22px;
+    margin: 0;
+}
+
+.card_subtitle{
+    font-size: 13px;
+    font-weight: 100;
+    letter-spacing: 2px;
+    margin: 0;
+    margin-top: 5px;
+}
+
+.card_content{
+    font-size: 9px;
+    margin: 10px; /* arriba abajo*/
+    padding-bottom: 0;
+    text-align: justify;
+    margin-bottom: 0;
+}
+
+.card_img{
+    width: 150px;
+    border-radius: 50%;
+}
+
+/*----------------------------------*/
+
+.card-yellow{
+    background: #044;
+    text-align: center;
+    width: 300px;
+    margin: auto;
+    margin-top: 50px;
+    padding: 20px 10px;
+    box-shadow: 0 0 30px #0006;
+    border-radius: 8px;
+}
+
+.card_title{
+    font-size: 22px;
+    margin: 0;
+}
+
+.card_subtitle{
+    font-size: 13px;
+    font-weight: 100;
+    letter-spacing: 2px;
+    margin: 0;
+    margin-top: 5px;
+}
+
+.card_content{
+    font-size: 9px;
+    margin: 10px; /* arriba abajo*/
+    padding-bottom: 0;
+    text-align: justify;
+    margin-bottom: 0;
+}
+
+.card_img{
+    width: 150px;
+    border-radius: 50%;
+}
+
+/*----------------------------------*/
+
+.card-green{
+    background: #041;
+    text-align: center;
+    width: 300px;
+    margin: auto;
+    margin-top: 50px;
+    padding: 20px 10px;
+    box-shadow: 0 0 30px #0006;
+    border-radius: 8px;
+}
+
+.card_title{
+    font-size: 22px;
+    margin: 0;
+}
+
+.card_subtitle{
+    font-size: 13px;
+    font-weight: 100;
+    letter-spacing: 2px;
+    margin: 0;
+    margin-top: 5px;
+}
+
+.card_content{
+    font-size: 9px;
+    margin: 10px; /* arriba abajo*/
+    padding-bottom: 0;
+    text-align: justify;
+    margin-bottom: 0;
+}
+
+.card_img{
+    width: 150px;
+    border-radius: 50%;
+}

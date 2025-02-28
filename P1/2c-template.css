@@ -1,0 +1,111 @@
+/* https://www.w3schools.com/howto/howto_css_two_columns.asp */
+/* https://developer.mozilla.org/es/docs/Web/CSS/box-sizing */
+/* Así definimos el comportamiento de caja para todos los elementos */
+body{
+  background-color: #e2e2e2;
+  margin: 0;
+  font-family: sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+  }
+  
+/* Crear columnas de ancho diferente que se colocan una a continuación de la otra */
+.columna {
+float: left;
+padding: 10px;
+min-height: 500px;
+}
+
+.izquierda {
+width: 25%;
+}
+
+.derecha {
+width: 75%;
+}
+
+/* Clear floats despues de las columnas para eliminar la superposición */
+.filla:after {
+content: "";
+display: table;
+clear: both;
+}
+
+#c1 {
+    background-color:#aaa;
+}
+
+#c2 {
+    background-color:#bbb;
+}
+
+/* estilos para imágenes https://www.w3schools.com/css/css3_images.asp */
+/* posicionamiento de imágenes https://www.w3schools.com/css/css_positioning.asp */
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+.iresponsive {
+    padding: 0 6px;
+    float: left;
+    width: 50%;
+  }
+
+/* Responsive layout - cuando el ancho de pantalla es menor a 600px, muestra las columnas apiladas. */
+/* Así conseguimos que el contenido se vea bien en dispositvos móviles */
+
+@media screen and (max-width: 600px) {
+    .columna {
+      width: 100%;
+    }
+
+    .iresponsive {
+        width: 100%;
+    }
+}
+
+/* Más sobre diseño web responsive https://www.w3schools.com/css/css_rwd_intro.asp */
+
+/*----------------------------------*/
+
+.card-green{
+  background: #041;
+  text-align: center;
+  width: 300px;
+  margin: auto;
+  margin-top: 50px;
+  padding: 20px 10px;
+  box-shadow: 0 0 30px #0006;
+  border-radius: 8px;
+  color: #fff;
+}
+
+.card_title{
+  font-size: 22px;
+  margin: 0;
+}
+
+.card_subtitle{
+  font-size: 13px;
+  font-weight: 100;
+  letter-spacing: 2px;
+  margin: 0;
+  margin-top: 5px;
+}
+
+.card_content{
+  font-size: 9px;
+  margin: 10px; /* arriba abajo*/
+  padding-bottom: 0;
+  text-align: justify;
+  margin-bottom: 0;
+}
+
+.card_img{
+  width: 150px;
+  border-radius: 50%;
+}
