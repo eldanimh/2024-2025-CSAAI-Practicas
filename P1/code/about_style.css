@@ -37,7 +37,7 @@ p{
 }
 
 .card-blue{
-    background: #044;
+    background: #0a4;
     text-align: center;
     width: 300px;
     margin: auto;
@@ -53,7 +53,7 @@ p{
 }
 
 .card_subtitle{
-    font-size: 13px;
+    font-size: 16px !important;
     font-weight: 100;
     letter-spacing: 2px;
     margin: 0;
@@ -61,7 +61,7 @@ p{
 }
 
 .card_content{
-    font-size: 9px;
+    font-size: 13px !important;
     margin: 10px; /* arriba abajo*/
     padding-bottom: 0;
     text-align: justify;
@@ -112,41 +112,10 @@ p{
     border-radius: 50%;
 }
 
-/*----------------------------------*/
-
-.card-green{
-    background: #041;
-    text-align: center;
-    width: 300px;
+.boton{
     margin: auto;
-    margin-top: 50px;
-    padding: 20px 10px;
-    box-shadow: 0 0 30px #0006;
+    text-align: center;
+    background: linear-gradient(#044,#0441);
     border-radius: 8px;
-}
-
-.card_title{
-    font-size: 22px;
-    margin: 0;
-}
-
-.card_subtitle{
-    font-size: 13px;
-    font-weight: 100;
-    letter-spacing: 2px;
-    margin: 0;
-    margin-top: 5px;
-}
-
-.card_content{
-    font-size: 9px;
-    margin: 10px; /* arriba abajo*/
-    padding-bottom: 0;
-    text-align: justify;
-    margin-bottom: 0;
-}
-
-.card_img{
-    width: 150px;
-    border-radius: 50%;
+    
 }
