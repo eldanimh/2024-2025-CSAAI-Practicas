@@ -9,6 +9,10 @@ body{
     font-family: Arial, Helvetica, sans-serif;
     color: #fff;
     font-weight: bolder;
+    width: auto;
+    margin: auto;
+    background-color: #900;
+    border-radius: 8px;
 }
 
 .contador{
