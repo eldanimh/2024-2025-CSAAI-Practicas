@@ -4,14 +4,22 @@ body{
     color: #000;
 }
 
+.intentosRestantes{
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #fff;
+    font-weight: bolder;
+}
+
 .contador{
     text-align: center;
     font-size: 80px;
     font-family: 'Lucida Console';
-    color: #0f0;
+    color: #0f7;
     padding: 0;
     border: 0;
-    margin: 0;
+    margin: 20px;
+    font-weight: bolder;
 }
 
 .box{
@@ -35,10 +43,40 @@ body{
 
 }
 
+.boxMe{
+    width: 310px;
+    background: linear-gradient(#f00,#000a);
+    margin:auto;
+    margin-top: 30px;
+    border-top: 6px solid #900;
+    border-radius: 7px;
+    box-shadow: 0 0 55px 0 #0007;
+    box-sizing: border-box;
+    text-align: center;
+    color: #fffc;
+    text-align: center;
+    font-family: sans-serif;
+}
+
+.imgMe{
+    width: 310px;
+    margin: auto;
+}
+
+.pMe{
+    list-style: none;
+    text-align: left;
+    line-height: 1.5;
+    font-size: 13px;
+    margin: auto;
+    padding: 20px;
+}
+
 .valores{
     padding: 10px;
     font-size: 70px;
     font-display: 90px;
+    font-weight: bolder;
 }
 
 .botones_timer{
@@ -51,6 +89,7 @@ body{
     font-size: 22px;
     color: #f56;
     background-color: #000;
+    font-weight: bolder;
 }
 
 .botones{
@@ -59,7 +98,8 @@ body{
     text-align: center;
     padding: 10px 10px;
     font-size: 22px;
-    margin: 40px;   
+    margin: 20px;   
     color: #fff;
     background-color: #0f7;
+    font-weight: bolder;
 }
