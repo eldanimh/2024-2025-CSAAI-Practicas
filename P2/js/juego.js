@@ -26,7 +26,7 @@ valores = [valor1,valor2,valor3,valor4]
 const vidas = document.getElementById("intentos")
 
 // Adivinar
-adivinar = [4 ,1, 4, 4];
+adivinar = [Math.floor(Math.random()*10) ,Math.floor(Math.random()*10), Math.floor(Math.random()*10), Math.floor(Math.random()*10)];
 
 // Botones
 const b0 = document.getElementById("cero")
@@ -97,6 +97,7 @@ for (let j=0; j<=9; j++){
                 ganar_audio.play();
                 setTimeout(() => {
                     alert("¡HAS GANADO!");
+                    location.reload();
                     console.log("Después de la pausa de 1 segundo");
                 }, 2000);
                 
