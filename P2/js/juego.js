@@ -55,9 +55,10 @@ gui.start.onclick = () => {
     pulsar.currentTime = 0;
     pulsar.play();
     setTimeout(() => {
+        alert("Bienvenido a ¡BOOM!, intenta descubrir cuales son los 4 valores para detener la bomba, CUIDADO solo tienes 10 intentos")
         console.log("Después de la pausa de 1 segundo");
-    }, 1000);
-    alert("Bienvenido a ¡BOOM!, intenta descubrir cuales son los 4 valores para detener la bomba, CUIDADO solo tienes 10 intentos")
+    }, 2000);
+    
     jugar();
 }
 
@@ -95,9 +96,10 @@ for (let j=0; j<=9; j++){
                 ganar_audio.currentTime = 0;
                 ganar_audio.play();
                 setTimeout(() => {
+                    alert("¡HAS GANADO!");
                     console.log("Después de la pausa de 1 segundo");
-                }, 1000);
-                alert("¡HAS GANADO!");
+                }, 2000);
+                
             }
             break;
             
@@ -109,12 +111,14 @@ for (let j=0; j<=9; j++){
             if (parseInt(vidas.innerHTML)===0) {
                 console.log("LOOSE")
                 perder_audio.currentTime = 0;
-                perder_audio.play();
+                perder_audio.play(); 
                 setTimeout(() => {
+                    alert("BOOM! Te has quedado sin intentos");
+                    location.reload();
                     console.log("Después de la pausa de 1 segundo");
-                }, 1000);
-                alert("BOOM! Te has quedado sin intentos");
-                location.reload();
+                }, 2000);
+                
+                
             }
             break;
     
@@ -141,15 +145,16 @@ gui.reset.onclick = () => {
     pulsar.currentTime = 0;
     pulsar.play();
     setTimeout(() => {
+        location.reload();
         console.log("Después de la pausa de 1 segundo");
-    }, 1000);
+    }, 500);
     crono.reset();
     Colorbox.style.backgroundColor = "#6ac";
     Colorvalores.style.color= "#f00";
     ColorBotonTimer[0].style.backgroundColor= "#000";
     ColorBotonTimer[1].style.backgroundColor= "#000";
     ColorBotonTimer[2].style.backgroundColor= "#000";
-    location.reload();
+    
 }
 
 
