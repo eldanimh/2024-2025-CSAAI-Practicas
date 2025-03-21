@@ -54,6 +54,9 @@ const crono = new Crono(gui.display);
 gui.start.onclick = () => {
     pulsar.currentTime = 0;
     pulsar.play();
+    setTimeout(() => {
+        console.log("Después de la pausa de 1 segundo");
+    }, 1000);
     alert("Bienvenido a ¡BOOM!, intenta descubrir cuales son los 4 valores para detener la bomba, CUIDADO solo tienes 10 intentos")
     jugar();
 }
@@ -90,8 +93,11 @@ for (let j=0; j<=9; j++){
                 crono.stop();
                 console.log("WIN");
                 ganar_audio.currentTime = 0;
-                alert("¡HAS GANADO!");
                 ganar_audio.play();
+                setTimeout(() => {
+                    console.log("Después de la pausa de 1 segundo");
+                }, 1000);
+                alert("¡HAS GANADO!");
             }
             break;
             
@@ -103,9 +109,12 @@ for (let j=0; j<=9; j++){
             if (parseInt(vidas.innerHTML)===0) {
                 console.log("LOOSE")
                 perder_audio.currentTime = 0;
+                perder_audio.play();
+                setTimeout(() => {
+                    console.log("Después de la pausa de 1 segundo");
+                }, 1000);
                 alert("BOOM! Te has quedado sin intentos");
                 location.reload();
-                perder_audio.play();
             }
             break;
     
@@ -130,6 +139,10 @@ gui.stop.onclick = () => {
 gui.reset.onclick = () => {
     console.log("Reset!");
     pulsar.currentTime = 0;
+    pulsar.play();
+    setTimeout(() => {
+        console.log("Después de la pausa de 1 segundo");
+    }, 1000);
     crono.reset();
     Colorbox.style.backgroundColor = "#6ac";
     Colorvalores.style.color= "#f00";
@@ -137,7 +150,6 @@ gui.reset.onclick = () => {
     ColorBotonTimer[1].style.backgroundColor= "#000";
     ColorBotonTimer[2].style.backgroundColor= "#000";
     location.reload();
-    pulsar.play();
 }
 
 
