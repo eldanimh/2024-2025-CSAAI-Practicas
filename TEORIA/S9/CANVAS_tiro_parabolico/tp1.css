@@ -1,0 +1,12 @@
+/* 
+Estilos para el campo de tiro
+*/  
+
+#ctiro {
+    background-color: lightblue;
+    border-style: solid;
+    border-width: 1px;
+    border-color: black;
+    border-radius: 5px;
+  }
+  
