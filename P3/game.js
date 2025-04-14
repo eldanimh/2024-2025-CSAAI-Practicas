@@ -93,6 +93,10 @@ function moveBricks() {
         for (let j = 0; j < LADRILLO.C; j++) {
             ladrillos[i][j].x += LADRILLO.brickSpeed * brickDirection;
             ladrillos[i][j].y += 0.2;
+            if (ladrillos[i][j].y >= player.y-80 && !victory) {
+                perder = true;
+                LooseSound.play();
+            }
         }
     }
 }
@@ -122,6 +126,8 @@ const hitSounds = [
 ];
 const victorySound = new Audio("sound/victory.mp3");
 
+const LooseSound = new Audio("sound/loose.mp3");
+
 const player = {
     x: canvas.width / 2 - 25,
     y: canvas.height - 60,
@@ -134,12 +140,23 @@ const player = {
 
 const bullets = [];
 
+const texto = {
+    x: 10, 
+    y:40
+}
 
+function puntuacion() {
+    ctx.fillStyle = "white";
+    ctx.font = "20px Arial";
+    ctx.fillText("Puntuación: "+player.points,texto.x,texto.y);
+    
 
+}
 
 
 
 let victory = false;
+let perder = false;
 
 function drawPlayer() {
     ctx.drawImage(naveImg,player.x, player.y, player.width, player.height);
@@ -192,9 +209,9 @@ function checkCollisions() {
 
                         if (player.points == 240) {
                             victory = true;
-                            crearTracaFinal();
                             victorySound.play();
                         }
+
 
                     }
                 }
@@ -207,26 +224,7 @@ function checkCollisions() {
     });
 }
 
-function crearTracaFinal() {
-    const numExplosiones = 12;
 
-    for (let i = 0; i < numExplosiones; i++) {
-        const delay = i * 100; // separamos en el tiempo
-
-        setTimeout(() => {
-            const offsetX = Math.random() * boss.width;
-            const offsetY = Math.random() * boss.height;
-
-            explosions.push({
-                x: boss.x + offsetX - 20,
-                y: boss.y + offsetY - 20,
-                width: boss.width,
-                height: boss.height,
-                timer: 15
-            });
-        }, delay);
-    }
-}
 
 
 function shoot() {
@@ -252,16 +250,26 @@ function drawExplosions() {
 function drawVictory() {
     ctx.fillStyle = "green";
     ctx.font = "40px Arial";
-    ctx.fillText("¡Victoria!", canvas.width / 2 - 80, canvas.height / 2);
+    ctx.fillText("VICTORY!", canvas.width / 2 - 80, canvas.height / 2);
 }
+
+function drawDefeat() {
+    ctx.fillStyle = "red";
+    ctx.font = "40px Arial";
+    ctx.fillText("¡GAME OVER!", canvas.width / 2 - 80, canvas.height / 2);
+}
+
+
 
 function draw() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
+    puntuacion();
     drawPlayer();
     drawBricks();
     drawExplosions();
     drawBullets();
     if (victory) drawVictory();
+    if (perder) drawDefeat();
 }
 
 function update() {
