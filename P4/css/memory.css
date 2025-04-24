@@ -1,0 +1,25 @@
+@font-face {
+    font-family: Montserrat;
+    src: url(../files/Montserrat-Regular.ttf);
+}
+
+/* Y así podremos hacer referencia al font-family Montserrat más adelante
+font-family: Montserrat;
+*/
+
+.game {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+button {
+    cursor: pointer;
+}
+
+.disabled {
+    color: #757575;
+}
+
+
