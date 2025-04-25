@@ -11,7 +11,8 @@ var selectors = {
 }
 
 
-var exit = "";
+
+
 
 const state = {
     gameStarted: false,
@@ -21,33 +22,27 @@ const state = {
     loop: null
 }
 
-async function valor() {
-    let reply = 0
-    while (reply === null) {
-        reply =  document.querySelector('input[name="dimens"]:checked');
-        if (reply === "2" ) {
-            exit = "2"
-            break
-        }
-        else if (reply === "4") {
-            exit = "4"
-            break
-        }
-        else if (reply === "6" ) {
-            exit = "6"
-            break
-        }
-        
-    }
-    
-}
+
 
 
 ven = "2"
 
+function esperarSeleccion() {
+    return new Promise((resolve) => {
+      // Escucha el evento 'change' en los radio buttons
+        document.querySelectorAll('input[name="dimens"]').forEach(input => {
+        input.addEventListener('change', (event) => {
+          resolve(event.target.value);  // Resolvemos la promesa con el valor seleccionado
+        });
+        });
+    });
+}
 
-async function generateGame() {    
-    const dimensions = exit;
+
+function generateGame(dim) {    
+
+    
+    const dimensions = dim;
     
     //-- Nos aseguramos de que el número de dimensiones es par
     // y si es impar lanzamos un error
@@ -55,7 +50,7 @@ async function generateGame() {
       //  throw new Error("Las dimensiones del tablero deben ser un número par.")
     //}
     
-    valor()
+    
     //-- Creamos un array con los emojis que vamos a utilizar en nuestro juego
     const emojis = ['🥔', '🍒', '🥑', '🌽', '🥕', '🍇', '🍉', '🍌', '🥭', '🍍',"🍕","🦀","🍫","🍪","🧋","🍺","🌯","🍾"];
     
@@ -90,9 +85,9 @@ async function generateGame() {
     // para el tablero de juego.
     selectors.tablero.replaceWith(parser.querySelector('.tablero'))
 
-    requestAnimationFrame(function () {
-        generateGame()
-    });
+    //requestAnimationFrame(function () {
+    //    generateGame()
+    //});
 
 }
 
@@ -167,12 +162,15 @@ const attachEventListeners = () => {
 //generateGame(dimensiones());
 // JUGAR
 
-async function jugar() {
-    await valor();
-    await generateGame();    
+async function seguir() {
+    console.log("Esperando Respuesta")
+    const choose = await esperarSeleccion();
+    generateGame(choose);  
 }
 
-jugar()
+seguir();
+
+
 //
 
 
