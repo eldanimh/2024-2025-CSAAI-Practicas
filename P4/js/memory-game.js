@@ -24,9 +24,6 @@ const state = {
 
 
 
-
-ven = "2"
-
 function esperarSeleccion() {
     return new Promise((resolve) => {
       // Escucha el evento 'change' en los radio buttons
@@ -159,7 +156,7 @@ const attachEventListeners = () => {
 
 // Generamos el juego
 
-//generateGame(dimensiones());
+
 // JUGAR
 
 async function seguir() {
