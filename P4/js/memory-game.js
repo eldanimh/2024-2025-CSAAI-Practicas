@@ -1,11 +1,17 @@
-const selectors = {
+
+var selectors = {
     gridContainer: document.querySelector('.grid-container'),
     tablero: document.querySelector('.tablero'),
     movimientos: document.querySelector('.movimientos'),
     timer: document.querySelector('.timer'),
-    comenzar: document.querySelector('button'),
-    win: document.querySelector('.win')
+    comenzar: document.getElementById("start"),
+    win: document.querySelector('.win'),
+    reset : document.getElementById("reset"),
+    
 }
+
+
+var exit = "";
 
 const state = {
     gameStarted: false,
@@ -15,15 +21,41 @@ const state = {
     loop: null
 }
 
-const generateGame = () => {
-    const dimensions = selectors.tablero.getAttribute('grid-dimension')
+async function valor() {
+    let reply = 0
+    while (reply === null) {
+        reply =  document.querySelector('input[name="dimens"]:checked');
+        if (reply === "2" ) {
+            exit = "2"
+            break
+        }
+        else if (reply === "4") {
+            exit = "4"
+            break
+        }
+        else if (reply === "6" ) {
+            exit = "6"
+            break
+        }
+        
+    }
+    
+}
 
+
+ven = "2"
+
+
+async function generateGame() {    
+    const dimensions = exit;
+    
     //-- Nos aseguramos de que el número de dimensiones es par
     // y si es impar lanzamos un error
-    if (dimensions % 2 !== 0) {
-        throw new Error("Las dimensiones del tablero deben ser un número par.")
-    }
-
+    //if (dimensions % 2 !== 0) {
+      //  throw new Error("Las dimensiones del tablero deben ser un número par.")
+    //}
+    
+    valor()
     //-- Creamos un array con los emojis que vamos a utilizar en nuestro juego
     const emojis = ['🥔', '🍒', '🥑', '🌽', '🥕', '🍇', '🍉', '🍌', '🥭', '🍍',"🍕","🦀","🍫","🍪","🧋","🍺","🌯","🍾"];
     
@@ -31,15 +63,15 @@ const generateGame = () => {
     // es diferente.
     // Es decir, si tenemos un array con 10 emojis, vamos a elegir el cuadrado de las
     // dimensiones entre dos, para asegurarnos de que cubrimos todas las cartas
-    const picks = pickRandom(emojis, (dimensions * dimensions) / 2) 
+    var picks = pickRandom(emojis, (dimensions * dimensions) / 2) 
 
     //-- Después descolocamos las posiciones para asegurarnos de que las parejas de cartas
     // están desordenadas.
-    const items = shuffle([...picks, ...picks])
+    var items = shuffle([...picks, ...picks])
     
     //-- Vamos a utilizar una función de mapeo para generar 
     //  todas las cartas en función de las dimensiones
-    const cards = `
+    var cards = `
         <div class="tablero" style="grid-template-columns: repeat(${dimensions}, auto)">
             ${items.map(item => `
                 <div class="card">
@@ -52,12 +84,22 @@ const generateGame = () => {
     
     //-- Vamos a utilizar un parser para transformar la cadena que hemos generado
     // en código html.
-    const parser = new DOMParser().parseFromString(cards, 'text/html')
+    var parser = new DOMParser().parseFromString(cards, 'text/html')
 
     //-- Por último, vamos a inyectar el código html que hemos generado dentro de el contenedor
     // para el tablero de juego.
     selectors.tablero.replaceWith(parser.querySelector('.tablero'))
+
+    requestAnimationFrame(function () {
+        generateGame()
+    });
+
 }
+
+    
+
+
+
 
 const pickRandom = (array, items) => {
     // La sintaxis de tres puntos nos sirve para hacer una copia del array
@@ -102,27 +144,43 @@ const attachEventListeners = () => {
     document.addEventListener('click', event => {
         // Del evento disparado vamos a obtener alguna información útil
         // Como el elemento que ha disparado el evento y el contenedor que lo contiene
+        
         const eventTarget = event.target
         const eventParent = eventTarget.parentElement
-
+        
         // Cuando se trata de una carta que no está girada, le damos la vuelta para mostrarla
         if (eventTarget.className.includes('card') && !eventParent.className.includes('flipped')) {
             flipCard(eventParent)
         // Pero si lo que ha pasado es un clic en el botón de comenzar lo que hacemos es
         // empezar el juego
-        } else if (eventTarget.nodeName === 'BUTTON' && !eventTarget.className.includes('disabled')) {
+        } else if (eventTarget.id === 'start' && !eventTarget.className.includes('disabled')) {
             startGame()
+        }
+        else if (eventTarget.id === "reset") {
+            location.reload()
         }
     })
 }
 
 // Generamos el juego
-generateGame()
+
+//generateGame(dimensiones());
+// JUGAR
+
+async function jugar() {
+    await valor();
+    await generateGame();    
+}
+
+jugar()
+//
+
 
 // Asignamos las funciones de callback para determinados eventos
 attachEventListeners()
 
 const startGame = () => {
+    
     // Iniciamos el estado de juego
     state.gameStarted = true
     // Desactivamos el botón de comenzar
@@ -133,7 +191,7 @@ const startGame = () => {
     // y movimientos
     state.loop = setInterval(() => {
         state.totalTime++
-
+        
         selectors.movimientos.innerText = `${state.totalFlips} movimientos`
         selectors.timer.innerText = `tiempo: ${state.totalTime} sec`
     }, 1000)
@@ -146,6 +204,7 @@ const flipCard = card => {
     state.totalFlips++
 
     // Si el juego no estaba iniciado, lo iniciamos
+    
     if (!state.gameStarted) {
         startGame()
     }

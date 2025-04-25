@@ -12,15 +12,25 @@
     <body>
         <div class="game">
             <div class="controles">
-                <button>Comenzar</button>
+                <button id="start">Comenzar</button>
                 <div class="display">
                     <div class="movimientos">0 movimientos</div>
                     <div class="timer">tiempo: 0 sec</div>
                 </div>
-                
+                <button id="reset">Reiniciar Partida</button>
             </div>
+            <div>
+                <b>Elige el tamaño del tablero</b><br>
+                <input type="radio" name="dimens" value="2">2
+                <input type="radio" name="dimens" value="4">4
+                <input type="radio" name="dimens" value="6">6
+                <!--<input type="number" min="2" max="6" step="2">-->
+            </div>
+
             <div class="grid-container">
-                <div class="tablero" grid-dimension="4"></div>
+                <!--<div class="tablero" grid-dimension="6"></div>-->
+                
+                <div class="tablero"></div>
                 <div class="win">¡Has Ganado!</div>
             </div>
         </div>
