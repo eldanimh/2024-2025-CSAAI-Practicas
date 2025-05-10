@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulación de envío de paquetes de datos</title>
+
+    <link rel="stylesheet" href="css/net.css">
+
+    <script src="js/net-dijkstra.js" defer></script>
+    <script src="js/net.js" defer></script>
+   
+</head>
+<body>
+    <div class="controls">
+        <button id="btnCNet">Generar Red</button>
+        <button id="btnMinPath">Calcular ruta</button>
+    </div>
+    <div class="display">
+        <span id="nodes">0</span>
+        <span>Nodos</span><br>
+        <span>Tiempo total:</span>
+        <span id="time">0</span>
+        <span>sec</span>
+    </div>
+    <canvas id="networkCanvas" width="800" height="400"></canvas>
+</body>
+</html>

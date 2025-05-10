@@ -1,0 +1,43 @@
+canvas {
+    border: 4px solid #282A3A;
+    border-radius: 6px;
+    margin: auto;
+}
+
+.controls {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+    padding-left: 200px;
+    margin: auto;
+    padding-bottom: 20px;
+}
+
+button {
+    background: #282A3A;
+    color: #FFF;
+    padding: 10px 20px;
+    border: 0;
+    cursor: pointer;
+    font-family: Fredoka;
+    font-size: 18pt;
+    border-radius: 6px;
+    text-align: center;
+}
+
+.display{
+    width: 310px;
+    background: #acb;
+    color: #FFF;
+    margin-bottom: 10px;
+    font-family: Helvetica;
+    font-size: 18pt;
+    border-radius: 6px;
+    text-align: center;
+    font:bold;
+    padding: 10px 20px;
+    padding-left: 248px;
+    padding-right: 248px;
+    
+}
