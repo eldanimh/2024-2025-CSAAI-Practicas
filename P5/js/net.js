@@ -7,6 +7,9 @@ let nodoOrigen = 0, nodoDestino = 0;
 let rutaMinimaConRetardos;
 
 const nodes = document.getElementById("nodes");
+const gen_msg = document.getElementById("gen_msg");
+const error = document.getElementById("error");
+const time = document.getElementById("time")
 
 const nodeRadius = 40;
 const numNodos = 5;
@@ -171,18 +174,49 @@ btnCNet.onclick = () => {
   // Dibujar la red que hemos generado
   drawNet(redAleatoria);
   nodes.innerHTML=numNodos
+  gen_msg.innerHTML="Red Generada"
+  error.innerHTML=""
+  
 
 }
 
 
 btnMinPath.onclick = () => {
+  if (parseInt(nodes.innerHTML)===0) {
+    error.innerHTML="La red no está generada pulse primero el botón de 'Generar Red'"
+  }else{
+    // Supongamos que tienes una red de nodos llamada redAleatoria y tienes nodos origen y destino
+    nodoOrigen = redAleatoria[0]; // Nodo de origen
+    nodoDestino = redAleatoria[numNodos - 1]; // Nodo de destino
 
-  // Supongamos que tienes una red de nodos llamada redAleatoria y tienes nodos origen y destino
-  nodoOrigen = redAleatoria[0]; // Nodo de origen
-  nodoDestino = redAleatoria[numNodos - 1]; // Nodo de destino
+    // Calcular la ruta mínima entre el nodo origen y el nodo destino utilizando Dijkstra con retrasos
+    rutaMinimaConRetardos = dijkstraConRetardos(redAleatoria, nodoOrigen, nodoDestino);
+    console.log("Ruta mínima con retrasos:", rutaMinimaConRetardos);
+    let tiempo = 0
+    for (let i = 0; i < rutaMinimaConRetardos.length; i++) {
+      tiempo += rutaMinimaConRetardos[i].delay
+      rutaMinimaConRetardos.forEach(nodo => {
+        ctx.beginPath();
+        ctx.arc(nodo.x, nodo.y, nodeRadius, 0, 2 * Math.PI);
+        ctx.fillStyle = 'green';
+        ctx.fill();
+        ctx.stroke();
+        ctx.font = '12px Arial';
+        ctx.fillStyle = 'white';
+        ctx.textAlign = 'center';
+        nodoDesc = "N" + nodo.id + " delay " + Math.floor(nodo.delay);
+        ctx.fillText(nodoDesc, nodo.x, nodo.y + 5);
+      });
+      
+      
+      
+    }
+    time.innerHTML=parseInt(tiempo)
+    
 
-  // Calcular la ruta mínima entre el nodo origen y el nodo destino utilizando Dijkstra con retrasos
-  rutaMinimaConRetardos = dijkstraConRetardos(redAleatoria, nodoOrigen, nodoDestino);
-  console.log("Ruta mínima con retrasos:", rutaMinimaConRetardos);
+
+    //time.innerHTML=parseInt(5+rutaMinimaConRetardos[0].delay)
+  }
+  
 
 }
